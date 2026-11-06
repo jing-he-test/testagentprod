@@ -3,7 +3,7 @@ kind: Solution
 
 metadata:
   name: e2e-cad-solution-08f9b0e9
-  description: Simple agent solution for integration testing
+  description: Simple agent solution for integration testingfff
   version: "1.0.0"
 
 type: composite
