@@ -1,0 +1,21 @@
+apiVersion: asset.sap/v1
+
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: e2e-cad-solution-08f9b0e9-mcp-server
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+provides:
+  apis:
+  - name: e2e-cad-solution-08f9b0e9-mcp-server
+    kind: mcp-server
+    ordId: "customer.build:apiResource:e2e-cad-solution-08f9b0e9.e2e-cad-solution-08f9b0e9-mcp-server:v1"
+
+requires:
+  - name: "SAP_S4_PUC_API_PRODUCT_0002"
+    kind: api
+    ordId: "sap.s4:apiResource:API_PRODUCT_0002_MCP:v1"

@@ -1,0 +1,55 @@
+apiVersion: asset.sap/v1
+
+kind: Asset
+type: agent
+
+metadata:
+  name: e2e-cad-agent-c899451a
+  version: "1.0.0"
+  description: Simple agent for testing!!
+
+provides:
+  apis:
+  - name: e2e-cad-agent-c899451a
+    kind: a2a
+    ordId: "customer.build:apiResource:e2e-cad-solution-08f9b0e9.e2e-cad-agent-c899451a:v1"
+
+
+requires:
+  - name: e2e-cad-solution-08f9b0e9-mcp-server
+    kind: mcp-server
+    ordId: "customer.build:apiResource:e2e-cad-solution-08f9b0e9.e2e-cad-solution-08f9b0e9-mcp-server:v1"
+  - name: ariba-sourcing-mcp-server
+    kind: mcp-server
+    ordId: "sap.aribas4:apiResource:sourcing_event_MCP:v1"
+
+container:
+  port: 5000
+  buildPath: .
+
+runtime:
+  type: python
+  version: "3.12"
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "50m"
+  limits:
+    memory: "512Mi"
+    cpu: "200m"
+
+probes:
+  readiness:
+    path: /health/ready
+    initialDelaySeconds: 5
+    periodSeconds: 5
+  liveness:
+    path: /health/live
+    initialDelaySeconds: 15
+    periodSeconds: 10
+  startup:
+    path: /health/live
+    initialDelaySeconds: 0
+    periodSeconds: 5
+    failureThreshold: 30

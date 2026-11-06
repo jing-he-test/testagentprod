@@ -1,0 +1,49 @@
+{
+    "mcpTranslationVersion": "0.1",
+    "target": {
+        "ordId": "sap.abap:apiResource:H5352564253525620202020202020204150495F50524F44554354202020202020202020202020202020202020202020202020202020202050726F64756374202020202020202020202020202020202020202020202020202020202030303032:v1",
+        "type": "edmx"
+    },
+    "serverInfo": {
+        "name": "sap.mcp/sap_self",
+        "title": "sap_self",
+        "version": "1.0.0",
+        "description": "MCP server for the sap_self service."
+    },
+    "tools": [
+        {
+            "name": "list_productplantcosting_for_sap_self",
+            "title": "list_ProductPlantCosting_for_sap_self",
+            "description": "Retrieve a list of entities from the ProductPlantCosting collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+            "odataType": {
+                "entitySet": {
+                    "name": "ProductPlantCosting",
+                    "crudOperation": "read",
+                    "parameters": [
+                        {
+                            "name": "filter"
+                        },
+                        {
+                            "name": "select"
+                        },
+                        {
+                            "name": "orderby"
+                        },
+                        {
+                            "name": "top"
+                        },
+                        {
+                            "name": "skip"
+                        },
+                        {
+                            "name": "expand"
+                        },
+                        {
+                            "name": "count"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

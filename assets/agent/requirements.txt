@@ -1,0 +1,13 @@
+a2a-sdk==0.3.22
+apscheduler==3.10.4
+click==8.3.3
+langchain-core>=1.2.7
+langchain-litellm>=0.6.4
+pytz==2024.1
+starlette==1.0.0
+uvicorn==0.40.0
+sap-cloud-sdk>=0.43.0
+# mcp 2.0.0 renamed InitializeResult.serverInfo -> server_info; sap-cloud-sdk<=0.43.2
+# still accesses the camelCase attribute and crashes with 0 tools loaded. Pin to
+# <2.0.0 until the SDK is fixed upstream.
+mcp<2.0.0

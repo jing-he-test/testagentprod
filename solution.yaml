@@ -1,0 +1,13 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: e2e-cad-solution-08f9b0e9
+  description: Simple agent solution for integration testing
+  version: "1.0.0"
+
+type: composite
+
+assets:
+  - ref: ./assets/agent/asset.yaml
+  - ref: ./assets/s4-mcp-server/asset.yaml
